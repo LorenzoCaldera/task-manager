@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Task Manager</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <link rel="stylesheet" href="../src/css/styles.css">
+        <link rel="stylesheet" href="../src/css/task.css">
+    </head>
+
+    <body data-menu="false" class="d-flex">
+        <nav class="d-flex">
+            <div>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="sort-input" autocomplete="off">
+            </div>
+        </nav>
+        <div id="main">
+            <ul class="elements"></ul>
+
+            <div>
+                <img src="./resting.png">
+                <h1>It seems like you're all done for today!</h1>
+                <h2>Enjoy the rest of the day.</h2>
+            </div>
+
+            <button id="set-input" onclick={setInput()}>
+                <i class="fa-solid fa-plus"></i>
+                <text>Add task</text>
+            </button>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
+        <script src="../src/js/confettis.js"></script>
+        <script src="../src/js/app.js"></script>
+        <script src="../src/js/task.js"></script>
+
+    </body>
+</html>
