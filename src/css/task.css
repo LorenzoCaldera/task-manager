@@ -1,0 +1,175 @@
+#canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  #main {
+    margin-top: 100px;
+  }
+
+  .input-task {
+    margin: 40px 17% 0px;
+    position: relative;
+    --color: BLACK;
+  }
+
+  .input-task label {
+    color: var(--color);
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transform: translateY(10px);
+    transition: transform .5s, color .3s;
+  }
+
+  .elements:empty ~ #set-input {
+    margin: 50px 16% 0px;
+  }
+
+  .expand {
+    margin-left: 50px;
+  }
+
+  .expand:not(.rotate) + .hidden {
+    margin: 0px 50%;
+  }
+
+  .expand.rotate + .hidden {
+    margin: 0px 10px;
+    transition: all .3s;
+    max-height: 240px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .elements {
+    padding: 5px 15% 25px;
+  }
+
+  .elements:empty {
+    display: none;
+  }
+
+  .elements + div {
+    height: calc(100% - 100px);
+    width: 100%;
+    z-index: -1;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .elements:empty + div {
+    display: flex;
+  }
+
+  .elements + div img {
+    width: 745.5px;
+    height: 500px;
+  }
+
+  .task {
+    background: var(--task);
+    box-shadow: var(--shadow);
+    padding: 4px 0px 10px;
+    opacity: 0;
+    position: relative;
+  }
+
+  .task > div:first-child {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    padding: 4px;
+  }
+
+  .task > div:first-child > p {
+    max-width: 40%;
+    max-height: 40px;
+    overflow-x: hidden;
+    word-break: break-all;
+  }
+
+  .task > div:first-child .btn, .subtask .btn {
+    transform: translateX(500px);
+    font-size: 0px;
+    position: relative;
+  }
+
+  .task:hover > div:first-child .btn, .subtask:hover .btn {
+    transform: translateX(0px);
+    font-size: 20px;
+  }
+
+  .unlockedTask {
+    animation: removingTask 2s;
+    animation-fill-mode: forwards;
+  }
+
+  .subtask {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 0px;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    padding-left: 2%;
+    font-size: smaller;
+  }  
+
+  .subtask:nth-child(even) {
+    background: var(--subtask-even);
+  }
+
+  .subtask p {
+    max-width: 90%;
+    max-height: 40px;
+    overflow-x: hidden;
+    word-break: break-all;
+  }
+
+  .subtask .check {
+    margin: auto;
+  }
+
+  .options {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+    overflow: hidden;
+    background: WHITE;
+    border-radius: 6px;
+    top: 40px;
+    right: 5px;
+  }
+
+  .options > button {
+    margin: 6px;
+  }
+
+  .options.expanded{
+    box-shadow: var(--shadow);
+  }
+  
+  .hidden {
+    transition: all .3s;
+    max-height: 0px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: var(--subtask);
+  }
+
+  .expanded {
+    transition: all .3s;
+    max-height: 240px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .rotate {
+    rotate: 90deg;
+  }
